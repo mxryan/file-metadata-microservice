@@ -12,13 +12,14 @@ app.get("/", (req, res) => {
 });
 
 app.post("/api/fileanalyse", (req, res) => {
-  console.log(req.fields);
   console.log(req.files);
-  const file = req.files[0]
-  console.log(file);
-  console.log("-------------------------------");
+  if(req.files.upfile) {
+    const {name, type, size} = req.files.upfile;
+    res.status(201).send({name, type, size});
+  } else {
+    res.status(404).send({error: "No file was found in the request object"});
+  }
   
-  res.send({message: "Recieved"});
 })
 
 app.listen(PORT, ()=>console.log("Server on"));
