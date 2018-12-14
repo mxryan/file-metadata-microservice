@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>File Metadata</title>
+</head>
+<body>
+  <div class="container">
+    <h2>File Metadata Microservice</h2>
+    <p>
+      After uploading a file, data regarding its size and type will be returned.
+    </p>
+    <div class="view">
+      <h4>Analyze</h4>
+      <form enctype="multipart/form-data" method="POST" action="/api/fileanalyse">
+        <input id="inputfield" type="file" name="upfile">
+        <input id="button" type="submit" value="Upload">
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>
